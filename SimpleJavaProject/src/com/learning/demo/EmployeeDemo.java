@@ -6,7 +6,7 @@ public class EmployeeDemo {
 
 	public static void main(String[] args) {
 
-		Employee employee = new Employee(101, "Adam Gilchrist", 75000.00);
+		Employee employee = new Employee(101, "Adam Smith", 75000.00);
 
 		System.out.println("Employee ID: " + employee.getEmployeeId());
 		System.out.println("Employee Name: " + employee.getEmployeeName());
