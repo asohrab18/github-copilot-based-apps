@@ -12,8 +12,8 @@ public class EmployeeDemo {
 	}
 
 	public static void printEmployeeDetails(Employee employee) {
-		System.out.println("Employee ID: " + employee.getEmployeeId());
-		System.out.println("Employee Name: " + employee.getEmployeeName());
+		System.out.println("Employee ID: " + employee.getId());
+		System.out.println("Employee Name: " + employee.getName());
 		System.out.println("Salary: " + employee.getSalary());
 	}
 }

@@ -1,30 +1,30 @@
 package com.learning.model;
 
 public class Employee {
-	private int employeeId;
-	private String employeeName;
+	private int id;
+	private String name;
 	private double salary;
 
-	public Employee(int employeeId, String employeeName, double salary) {
-		this.employeeId = employeeId;
-		this.employeeName = employeeName;
+	public Employee(int id, String name, double salary) {
+		this.id = id;
+		this.name = name;
 		this.salary = salary;
 	}
 
-	public int getEmployeeId() {
-		return employeeId;
+	public int getId() {
+		return id;
 	}
 
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getEmployeeName() {
-		return employeeName;
+	public String getName() {
+		return name;
 	}
 
-	public void setEmployeeName(String employeeName) {
-		this.employeeName = employeeName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public double getSalary() {
