@@ -5,6 +5,35 @@ public final class AppUtils {
     private AppUtils() {
     }
 
+    /**To check whether a number is an Armstrong number or not.*/
+    public static boolean isArmstrongNumber(int number) {
+        if (number < 0) {
+            return false;
+        }
+        if (number == 0) {
+            return true;
+        }
+
+        int originalNumber = number;
+        int digitCount = 0;
+
+        while (originalNumber > 0) {
+            originalNumber /= 10;
+            digitCount++;
+        }
+
+        originalNumber = number;
+        int sum = 0;
+
+        while (originalNumber > 0) {
+            int digit = originalNumber % 10;
+            sum += (int) Math.pow(digit, digitCount);
+            originalNumber /= 10;
+        }
+
+        return sum == number;
+    }
+
     /**To check whether a number is prime or not.*/
     public static boolean isPrime(int number) {
         if (number <= 1) {
