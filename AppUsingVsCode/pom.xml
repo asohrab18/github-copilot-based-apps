@@ -4,10 +4,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.learning</groupId>
-	<artifactId>SimpleJavaProject</artifactId>
+	<artifactId>AppUsingVsCode</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SimpleJavaProject</name>
-	<description>Simple Java Maven Project</description>
+	<name>AppUsingVsCode</name>
+	<description>Java App using VS Code Editor</description>
 	<properties>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
