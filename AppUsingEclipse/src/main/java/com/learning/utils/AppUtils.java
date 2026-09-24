@@ -4,20 +4,6 @@ import java.math.BigInteger;
 
 public class AppUtils {
 
-	public static void main(String[] args) {
-		System.out.println("isArmstrong(123) = " + isArmstrong(123));
-		System.out.println("isArmstrong(153) = " + isArmstrong(153));
-		System.out.println("isArmstrong(9474) = " + isArmstrong(9474));
-		System.out.println("isArmstrong(54748) = " + isArmstrong(54748));
-		System.out.println("isArmstrong(92727) = " + isArmstrong(92727));
-		System.out.println("isArmstrong(93084) = " + isArmstrong(93084));
-		System.out.println("isArmstrong(548834) = " + isArmstrong(548834));
-		// Palindrome examples
-		System.out.println("isPalindrome(madam) = " + isPalindrome("madam"));
-		System.out.println("isPalindrome(Racecar) = " + isPalindrome("Racecar"));
-		System.out.println("isPalindrome(A man, a plan, a canal: Panama) = " + isPalindrome("A man, a plan, a canal: Panama"));
-	}
-
 	/**
 	 * Compute factorial of n (n!) using BigInteger. Supports n >= 0.
 	 * 
@@ -25,14 +11,17 @@ public class AppUtils {
 	 * @return n! as BigInteger
 	 * @throws IllegalArgumentException if n < 0
 	 */
-	public static BigInteger factorial(int n) {
+	public static BigInteger getFactorial(int n) {
 		if (n < 0) {
 			throw new IllegalArgumentException("n must be >= 0");
 		}
+		
 		BigInteger result = BigInteger.ONE;
+		
 		for (int i = 2; i <= n; i++) {
 			result = result.multiply(BigInteger.valueOf(i));
 		}
+		
 		return result;
 	}
 
@@ -46,6 +35,7 @@ public class AppUtils {
 		if (n < 2) {
 			return false;
 		}
+		
 		if (n == 2) {
 			return true;
 		}
@@ -53,12 +43,15 @@ public class AppUtils {
 		if (n % 2 == 0) {
 			return false;
 		}
+		
 		int r = (int) Math.sqrt(n);
+		
 		for (int i = 3; i <= r; i += 2) {
 			if (n % i == 0) {
 				return false;
 			}
 		}
+		
 		return true;
 	}
 
@@ -73,29 +66,36 @@ public class AppUtils {
 		if (n < 0) {
 			return false;
 		}
+		
 		int original = n;
 		int digits = (n == 0) ? 1 : 0;
 		int temp = n;
+		
 		while (temp > 0) {
 			digits++;
 			temp /= 10;
 		}
+		
 		long sum = 0L;
 		temp = n;
+		
 		while (temp > 0) {
 			int d = temp % 10;
 			sum += powInt(d, digits);
 			temp /= 10;
 		}
+		
 		return sum == (long) original;
 	}
 
 	// Helper: integer power returning long (base >= 0, exp >= 0)
 	private static long powInt(int base, int exp) {
 		long r = 1L;
+		
 		for (int i = 0; i < exp; i++) {
 			r *= base;
 		}
+		
 		return r;
 	}
 
@@ -110,25 +110,31 @@ public class AppUtils {
 		if (s == null) {
 			return false;
 		}
+		
 		int i = 0, j = s.length() - 1;
+		
 		while (i < j) {
 			char a = s.charAt(i);
 			char b = s.charAt(j);
+		
 			if (!Character.isLetterOrDigit(a)) {
 				i++;
 				continue;
 			}
+			
 			if (!Character.isLetterOrDigit(b)) {
 				j--;
 				continue;
 			}
+			
 			if (Character.toLowerCase(a) != Character.toLowerCase(b)) {
 				return false;
 			}
+			
 			i++;
 			j--;
 		}
+		
 		return true;
 	}
-
 }
